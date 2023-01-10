@@ -18,3 +18,14 @@
 Windows+X 打开系统命令行（管理员身份）或powershell
 运行 ipconfig /flushdns 手动刷新系统DNS缓存。
 ```
+
+## 实现方式
+1. 使用分别爬取三个链接地址对应的DNS地址（request+BeautifulSoup）
+2. 写入host文件 
+3. 刷新缓存（os.system）
+
+## 使用方式
+使用python执行main.py文件
+```
+python main.py
+```
