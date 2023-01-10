@@ -21,7 +21,7 @@ def getAdder(site, select):
 if __name__ == '__main__':
     hosts = ["github.com", "assets-cdn.github.com", "github.global.ssl.fastly.net"]
     selects = ['body > div.resp.main > main > section:nth-child(7) > table > tbody > tr:nth-child(8) > td > ul > li',
-               'body > div.resp.main > main > section:nth-child(8) > div:nth-child(8) > table > tbody > tr:nth-child(6) > td > ul > li',
+               '#dns > tbody > tr:nth-child(1) > td:nth-child(2) > a',
                'body > div.resp.main > main > section:nth-child(8) > div > table > tbody > tr:nth-child(6) > td > ul > li:nth-child(1)']
     result = ""
     print("开始查询.....")
@@ -30,10 +30,10 @@ if __name__ == '__main__':
         string = getAdder(hosts[i], selects[i]) + "  " + hosts[i]
         print(hosts[i] + "查询成功，结果为：" + string)
         result = result + string + "\n"
-        if i < len(hosts) - 1:
-            print("开始睡眠...")
-            time.sleep(5)
-            print("睡眠结束")
+        # if i < len(hosts) - 1:
+        #     print("开始睡眠...")
+        #     time.sleep(5)
+        #     print("睡眠结束")
 
     print("写入host文件")
     host_file = open('C:\Windows\System32\drivers\etc\hosts', 'w')
